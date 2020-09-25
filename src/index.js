@@ -42,7 +42,7 @@ app.use(express.json());
 // / route returns a json message instead of cannot get /
 app.get("/", (req, res) => {
 	res.json({
-		message: "Hello World!!",
+		message: "Hello World!!!",
 	});
 });
 
