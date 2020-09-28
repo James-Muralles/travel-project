@@ -22,10 +22,10 @@ const logs = require("./api/logs");
 
 const app = express();
 
-const url = "mongodb://mongodb://localhost:27017/travel-log";
+const url = "mongodb://localhost:27017/travel-log";
 console.log(url);
 
-mongoose.connect(url, {
+mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });

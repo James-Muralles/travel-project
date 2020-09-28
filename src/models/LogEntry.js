@@ -5,14 +5,14 @@ const {Schema} = mongoose;
 
 const requiredNumber = {
 	type: Number,
-	required: true,
+	required: [true, 'a number is required'],
 };
 
 const logEntrySchema = new Schema(
 	{
 		title: {
 			type: String,
-			required: true,
+			required: [true, 'a title is required'],
 		},
 		description: String,
 		comments: String,
@@ -34,7 +34,7 @@ const logEntrySchema = new Schema(
 			max: 180,
 		},
 		visitDate: {
-			required: true,
+			required: [true, 'a date is required'],
 			type: Date,
 		},
 	},
