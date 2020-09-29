@@ -6,11 +6,21 @@ const router = Router();
 
 
 
-router.get("/", (req, res) => {
-	res.json({
-		message: "🌍",
-	});
+// router.get("/", (req, res) => {
+// 	res.json({
+// 		message: "🌍",
+// 	});
+// });
+
+router.get("/",async (req, res, next) => {
+    try{   
+    const entries = await LogEntry.find();
+        res.json(entries);
+    }catch(error){
+        next(error)
+    }
 });
+
 
 router.post("/", async (req, res, next) => {
 	try {
@@ -26,5 +36,5 @@ router.post("/", async (req, res, next) => {
 	}
 });
 
-// export default router;
+export default router;
 module.exports = router;
